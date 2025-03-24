@@ -1,0 +1,26 @@
+//CONCEPT OF Interface: Payment System
+interface PaymentMethod {
+    void pay(double amount);
+}
+
+class CreditCard implements PaymentMethod {
+    public void pay(double amount) {
+        System.out.println("Paid " + amount + " using Credit Card.");
+    }
+}
+
+class PayPal implements PaymentMethod {
+    public void pay(double amount) {
+        System.out.println("Paid " + amount + " using PayPal.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        PaymentMethod payment1 = new CreditCard();
+        PaymentMethod payment2 = new PayPal();
+        
+        payment1.pay(100);
+        payment2.pay(50);
+    }
+}
