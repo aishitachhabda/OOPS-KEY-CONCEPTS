@@ -1,0 +1,26 @@
+//Abstraction: Vehicle Simulation
+abstract class Vehicle {
+    abstract void fuelEfficiency();
+}
+
+class Car extends Vehicle {
+    void fuelEfficiency() {
+        System.out.println("Fuel efficiency: 15 km/l");
+    }
+}
+
+class Truck extends Vehicle {
+    void fuelEfficiency() {
+        System.out.println("Fuel efficiency: 8 km/l");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Vehicle car = new Car();
+        Vehicle truck = new Truck();
+        
+        car.fuelEfficiency();
+        truck.fuelEfficiency();
+    }
+}
