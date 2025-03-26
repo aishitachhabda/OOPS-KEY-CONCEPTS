@@ -1,0 +1,24 @@
+class EventBooking {
+    int availableTickets = 10;
+
+    public void bookTicket(int tickets) throws Exception {
+        if (tickets > availableTickets) {
+            throw new Exception("Not enough tickets available.");
+        } else {
+            availableTickets -= tickets;
+            System.out.println("Booking successful! Remaining tickets: " + availableTickets);
+        }
+    }
+}
+
+public class BookingSystem {
+    public static void main(String[] args) {
+        EventBooking booking = new EventBooking();
+        
+        try {
+            booking.bookTicket(12);  // Trying to book more tickets than available
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
