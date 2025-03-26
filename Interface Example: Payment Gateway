@@ -1,0 +1,22 @@
+interface PaymentMethod {
+    void processPayment(double amount);
+}
+
+class CreditCardPayment implements PaymentMethod {
+    public void processPayment(double amount) {
+        System.out.println("Payment of $" + amount + " processed through Credit Card.");
+    }
+}
+
+class PayPalPayment implements PaymentMethod {
+    public void processPayment(double amount) {
+        System.out.println("Payment of $" + amount + " processed through PayPal.");
+    }
+}
+
+public class ECommerce {
+    public static void main(String[] args) {
+        PaymentMethod payment = new PayPalPayment();
+        payment.processPayment(99.99);
+    }
+}
