@@ -1,0 +1,23 @@
+import java.io.*;
+
+public class UserData {
+    public static void main(String[] args) {
+        // Writing user data to a file
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("userdata.txt"))) {
+            writer.write("User1: John Doe, Age: 30\n");
+            writer.write("User2: Jane Smith, Age: 25\n");
+        } catch (IOException e) {
+            System.out.println("Error writing to file.");
+        }
+
+        // Reading user data from the file
+        try (BufferedReader reader = new BufferedReader(new FileReader("userdata.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            System.out.println("Error reading from file.");
+        }
+    }
+}
